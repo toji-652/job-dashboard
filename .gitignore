@@ -1,0 +1,15 @@
+# Secrets & local env
+.env
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# NOTE: jobs.db is intentionally NOT ignored — the GitHub Action commits it
+# so the hosted dashboard can read the latest data.

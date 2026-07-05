@@ -1,0 +1,43 @@
+# ============================================================================
+#  Job Feed — configuration
+#  Edit this file to change what gets fetched. Nothing else needs touching.
+# ============================================================================
+
+# What to search for. Add or remove freely — one search is run per keyword.
+keywords:
+  - data engineer
+  - senior data engineer
+  - analytics engineer
+  - snowflake
+  - data platform engineer
+
+# Locations to search (used by Adzuna + Jooble only).
+# Remote roles are ALSO covered by the dedicated remote feeds below, so you
+# don't strictly need "Remote" here. Add cities to widen (e.g. "Bengaluru").
+# Note: each extra location multiplies the number of API calls per run.
+locations:
+  - India
+
+# Adzuna country code: in = India, us = USA, gb = UK, etc.
+adzuna_country: in
+
+# Drop a posting from the database once we haven't seen it for this many days.
+# Keeps the DB small (and git history bounded) and hides dead listings.
+retention_days: 30
+
+# In the dashboard, flag postings first seen within this many hours as "NEW".
+new_within_hours: 24
+
+# Max results to request per keyword, per source. Keeps free-tier API usage low.
+max_results_per_query: 50
+
+# Turn individual sources on/off.
+#   adzuna, jooble        -> aggregators (need a free API key each)
+#   remoteok, remotive,   -> remote-only feeds (no key needed)
+#   weworkremotely
+sources:
+  adzuna: true
+  jooble: true
+  remoteok: true
+  remotive: true
+  weworkremotely: true
